@@ -1,2 +1,2 @@
 # Ignore journal files
-*.learning.md
+/learning.md

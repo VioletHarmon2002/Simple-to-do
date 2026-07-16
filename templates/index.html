@@ -3,38 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>TO-DO List</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <link rel="stylesheet" href="/static/stylesheet.css">
 </head>
+
 <body>
 
+    <div class="container py-5">
 
+        <div
+            class="card shadow p-4 mx-auto"
+            style="max-width: 700px;"
+        >
 
-<h1> 
-    TO-DO List
-</h1>
-<div class = "container-fluid">
-    <h2></h2>
-<input type="text" class="form-control" placeholder="Enter a task" id="taskInput">
+            <h1>TO-DO List</h1>
 
+            <p id="currentDate"></p>
 
-<button class="btn btn-primary mt-2" id="addTaskButton">Add Task</button>  <!-- mt- 2 means margin-top: 0.5rem -->
+            <i class="bi bi-check-lg text-primary fs-2 mb-3"></i>
 
- <div class = "mt-3">
-    <h2 class = "mt-3">Your tasks</h2>
-    <ul class="list-group" id="taskList"></ul>
+            <h2 class="mb-4">
+                Get things done, one task at a time.
+            </h2>
 
- </div>   
+            <!-- Add task area -->
 
+            <div class="d-flex gap-2 align-items-stretch">
 
-    
+                <input
+                    type="text"
+                    class="form-control"
+                    id="taskInput"
+                    placeholder="What needs to be done?"
+                >
 
+                <button
+                    type="button"
+                    class="btn btn-primary flex-fill"
+                    id="addTaskButton"
+                >
+                    <i class="bi bi-plus-lg"></i>
+                    Add Task
+                </button>
 
+            </div>
 
-</div>
+            <!-- Filter buttons -->
 
+            <div class="btn-group gap-2 mt-3 w-100">
 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
- <script src="/static/script.js"></script>   
+                <button
+                    type="button"
+                    class="btn btn-primary rounded"
+                    id="allTasksButton"
+                >
+                    <i class="bi bi-collection"></i>
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary rounded"
+                    id="activeTasksButton"
+                >
+                    <i class="bi bi-clock"></i>
+                    Active
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary rounded"
+                    id="completedTasksButton"
+                >
+                    <i class="bi bi-check-circle"></i>
+                    Completed
+                </button>
+
+            </div>
+
+            <!-- Task list -->
+
+            <h2 class="mt-4">
+                Your tasks
+            </h2>
+
+            <ul
+                class="list-group mt-3"
+                id="taskList"
+            ></ul>
+
+            <!-- Statistics -->
+
+            <div class="card bg-light p-4 mt-3">
+
+                <div class="d-flex justify-content-around text-center">
+
+                    <div>
+                        <p class="mb-2 text-muted">Total</p>
+                        <h3 id="totalTasks">0</h3>
+                    </div>
+
+                    <div>
+                        <p class="mb-2 text-muted">Completed</p>
+                        <h3 id="completedTasks">0</h3>
+                    </div>
+
+                    <div>
+                        <p class="mb-2 text-muted">Remaining</p>
+                        <h3 id="remainingTasks">0</h3>
+                    </div>
+
+                    <div class="progress-circle" id="progressCircle">
+                         <span id="progressPercentage">0%</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/script.js"></script>
+
 </body>
 </html>

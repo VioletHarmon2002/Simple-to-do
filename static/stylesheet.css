@@ -1,0 +1,41 @@
+.btn-delete {
+    background-color: #e8b2b8;
+    border-color: #f1aeb5;
+}
+
+
+.progress-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: conic-gradient(
+        #0d6efd 0%,
+        #0d6efd 0%,
+        #e9ecef 0%,
+        #e9ecef 100%
+    );
+
+    position: relative;
+}
+
+.progress-circle::before {
+    content: "";
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+}
+
+.progress-circle span {
+    position: relative;
+    z-index: 1;
+    font-size: 18px;
+    font-weight: bold;
+}
+

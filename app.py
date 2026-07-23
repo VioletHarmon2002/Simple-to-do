@@ -30,7 +30,14 @@ def save_task():
 
     return jsonify(tasks)
 
-    
+@app.route("/api/tasks/<int:id>", methods=["DELETE"])
+def delete_tasks(id):
+    delete_task(id)
+
+    tasks = open_json()
+
+    return jsonify(tasks)
+
 
     
 
